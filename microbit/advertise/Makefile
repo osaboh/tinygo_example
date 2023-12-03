@@ -15,6 +15,9 @@ $(TARGET).elf: $(SRCS)
 mac: $(SRCS)
 	go build $^
 
+flash:
+	tinygo flash -target=microbit-s110v8 -programmer=cmsis-dap
+
 mod: go.mod go.sum
 go.mod:
 	go mod init $(TARGET)
